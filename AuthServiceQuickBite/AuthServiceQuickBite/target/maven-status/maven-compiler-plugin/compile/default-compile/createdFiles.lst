@@ -1,0 +1,4 @@
+com\example\AuthServiceQuickBite\AuthServiceQuickBiteApplication.class
+com\example\AuthServiceQuickBite\entity\UserAuth.class
+com\example\AuthServiceQuickBite\entity\Role.class
+com\example\AuthServiceQuickBite\entity\UserAuth$UserAuthBuilder.class
