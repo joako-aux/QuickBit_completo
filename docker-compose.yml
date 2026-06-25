@@ -1,0 +1,224 @@
+
+
+services:
+  # ===================================================================
+  # 1. API GATEWAY
+  # ===================================================================
+  api-gateway:
+    build: ./APIGatewayQuickBite/APIGatewayQuickBite
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTH_SERVICE_URL=http://auth-service:8081
+      - USER_SERVICE_URL=http://user-service:8082
+      - MENU_SERVICE_URL=http://menu-service:8083
+      - ORDER_SERVICE_URL=http://order-service:8084
+      - PAGOS_SERVICE_URL=http://pagos-service:8085
+      - NOTIFICATION_SERVICE_URL=http://notification-service:8086
+    depends_on:
+      - auth-service
+      - user-service
+      - menu-service
+      - order-service
+      - pagos-service
+      - notification-service
+
+  # ===================================================================
+  # 2. AUTH SERVICE (server.port=8081)
+  # ===================================================================
+  auth-service:
+    build: ./AuthServiceQuickBite/AuthServiceQuickBite
+    ports:
+      - "8081:8081"
+    environment:
+      - DB_HOST=mysql-auth
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=admin
+    depends_on:
+      mysql-auth:
+        condition: service_healthy
+
+  # ===================================================================
+  # 3. USER SERVICE (server.port=8082)
+  # ===================================================================
+  user-service:
+    build: ./UserServiceQuickBite
+    ports:
+      - "8082:8082"
+    environment:
+      - DB_USER_HOST=mysql-user
+      - DB_USER_PORT=3306
+      - DB_USER_USER=root
+      - DB_USER_PASSWORD=admin
+    depends_on:
+      mysql-user:
+        condition: service_healthy
+
+  # ===================================================================
+  # 4. MENU SERVICE (server.port=8083)
+  # ===================================================================
+  menu-service:
+    build: ./menu-service-quickbite
+    ports:
+      - "8083:8083"
+    environment:
+      - DB_MENU_HOST=mysql-menu
+      - DB_MENU_PORT=3306
+      - DB_MENU_USER=root
+      - DB_MENU_PASSWORD=admin
+    depends_on:
+      mysql-menu:
+        condition: service_healthy
+
+  # ===================================================================
+  # 5. ORDER SERVICE (server.port=8084)
+  # ===================================================================
+  order-service:
+    build: ./OrderServiceQuickBite
+    ports:
+      - "8084:8084"
+    environment:
+      - DB_ORDER_HOST=mysql-order
+      - DB_ORDER_PORT=3306
+      - DB_ORDER_USER=root
+      - DB_ORDER_PASSWORD=admin
+    depends_on:
+      mysql-order:
+        condition: service_healthy
+
+  # ===================================================================
+  # 6. PAGOS SERVICE (server.port=8085)
+  # ===================================================================
+  pagos-service:
+    build: ./pagos-service-quickbite
+    ports:
+      - "8085:8085"
+    environment:
+      - DB_PAGOS_HOST=mysql-pagos
+      - DB_PAGOS_PORT=3306
+      - DB_PAGOS_USER=root
+      - DB_PAGOS_PASSWORD=admin
+    depends_on:
+      mysql-pagos:
+        condition: service_healthy
+
+  # ===================================================================
+  # 7. NOTIFICATION SERVICE (server.port=8086)
+  # ===================================================================
+  notification-service:
+    build: ./NotificationServiceQuickBite/NotificationServiceQuickBite
+    ports:
+      - "8086:8086"
+    environment:
+      - DB_NOTIF_HOST=mysql-notif
+      - DB_NOTIF_PORT=3306
+      - DB_NOTIF_USER=root
+      - DB_NOTIF_PASSWORD=admin
+    depends_on:
+      mysql-notif:
+        condition: service_healthy
+
+  # ===================================================================
+  # INFRAESTRUCTURA DE BASES DE DATOS (CON CHEQUEO DE SALUD)
+  # ===================================================================
+  mysql-auth:
+    image: mysql:8.0
+    ports:
+      - "3305:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=quickbite_auth
+    volumes:
+      - mysql_auth_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mysql-menu:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=db_menu
+    volumes:
+      - mysql_menu_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mysql-notif:
+    image: mysql:8.0
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=quickbite_notifications
+    volumes:
+      - mysql_notif_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mysql-user:
+    image: mysql:8.0
+    ports:
+      - "3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=quickbite_user
+    volumes:
+      - mysql_user_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mysql-order:
+    image: mysql:8.0
+    ports:
+      - "3310:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=quickbite_order
+    volumes:
+      - mysql_order_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mysql-pagos:
+    image: mysql:8.0
+    ports:
+      - "3311:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=quickbite_pagos
+    volumes:
+      - mysql_pagos_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+# ===================================================================
+# PERSISTENCIA DE VOLÚMENES
+# ===================================================================
+volumes:
+  mysql_auth_data:
+  mysql_user_data:
+  mysql_menu_data:
+  mysql_notif_data:
+  mysql_order_data:
+  mysql_pagos_data:

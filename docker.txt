@@ -1,0 +1,20 @@
+iniciar
+docker compose up --build -d
+
+quitar cosas que están a medias
+docker compose down --volumes
+
+ver si están iniciados
+docker ps
+
+terminar
+docker compose down
+
+
+errores 
+docker compose logs --tail=50 -f
+
+
+
+reinicio solo
+docker compose up -d --build api-gateway

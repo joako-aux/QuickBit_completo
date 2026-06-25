@@ -1,0 +1,124 @@
+Método: POST
+
+http://localhost:8080/api/auth/register
+
+{
+  "email": "moise@gmail.com",
+  "password": "123456"
+}
+
+
+Método: POST
+
+http://localhost:8080/api/auth/login
+
+{
+  "email": "joaquin@example.com",
+  "password": "password123"
+}
+
+
+
+Método: GET
+http://localhost:8081/api/auth/test
+jwt.io.
+
+-------------------------------------
+
+crear perfil 
+
+Método: POST
+http://localhost:8080/api/usuarios
+
+{
+    "nombre": "Moise",
+    "apellido": "Fonseca",
+    "telefono": 987654321,
+    "direccion": "Av. Siempre Viva 742",
+    "ciudad": "Springfield"
+}
+
+Método: GET
+http://localhost:8080/api/usuarios
+tiene todos los usuarios 
+
+copiamos la id DEL USUSARIO
+91999e25-8805-48a0-9646-9fccb95de82f
+-----------------------------------
+
+Método: POST
+http://localhost:8080/api/categorias
+
+{
+    "nombre": "verduras",
+    "descripcion": "ricas y nutritivas"
+}
+copiamos la id  CATEGORIA
+82404b3e-5958-42ac-973c-6e4f308d51f6
+
+Método: POST
+http://localhost:8080/api/productos
+{
+    "nombre": "BANANA",
+    "descripcion": "LA QUE LE GUSTA AL MATY",
+    "precio": 99999.0,
+    "imagen": "",
+    "disponible": true,
+    "categoriaId": "82404b3e-5958-42ac-973c-6e4f308d51f6"
+}
+copiamos la id PRODUCTO
+2c2b3122-0584-4fcd-9d9b-e351065dac47
+
+
+----------------------------------------
+
+Método: POST
+http://localhost:8080/api/ordenes
+
+{
+    "usuarioId": "91999e25-8805-48a0-9646-9fccb95de82f",
+    "estado": "PENDIENTE",
+    "direccionEntrega": "Av. Nueva Providencia 1881, Oficina 510",
+    "total": 15500.0
+}
+copiamos la id ORDEN 
+f00d2073-da0f-4d8f-bd60-d7b50d7ea447
+
+-----------------------------------
+
+Método: POST
+http://localhost:8080/api/pagos
+{
+    "pedidoId": "f00d2073-da0f-4d8f-bd60-d7b50d7ea447",
+    "monto": 15500.0,
+    "metodoPago": "TARJETA_CREDITO"
+}
+
+copiamos la id PAGOS 
+41746f93-4cde-4729-a655-38eb9e13c0db
+----------------------------
+
+Método: POST
+http://localhost:8080/api/notificaciones/enviar
+
+{
+    "usuarioId": "91999e25-8805-48a0-9646-9fccb95de82f",
+    "destinatarioEmail": "moise@gmail.com",
+    "asunto": "Confirmación de tu Pedido - QuickBite",
+    "mensaje": "¡Hola! Tu pedido ha sido procesado con éxito y ya está en camino."
+}
+-----------------------
+
+http://localhost:8081/swagger-ui/index.html
+----------------
+
+comprobar el cliente 
+Método: GET
+http://localhost:8080/api/auth/cliente
+
+código 200 OK
+
+http://localhost:8080/api/auth/admin
+
+
+--------------------

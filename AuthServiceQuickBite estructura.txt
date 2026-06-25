@@ -1,0 +1,157 @@
+AuthServiceQuickBite
+│
+├── config
+│   │
+│   ├── BeanConfig
+│   │   └── Registra Beans de Spring
+│   │       (PasswordEncoder, etc.)
+│   │
+│   ├── SecurityConfig
+│   │   └── Configura Spring Security
+│   │       - Rutas públicas
+│   │       - Rutas protegidas
+│   │       - JWT Filter
+│   │
+│   └── SwaggerConfig
+│       └── Configura Swagger/OpenAPI
+│           - Authorize
+│           - Bearer Token
+│
+├── controller
+│   │
+│   └── AuthController
+│       └── Recibe peticiones HTTP
+│           - Register
+│           - Login
+│           - Change Password
+│           - Reset Password
+│           - Refresh Token
+│
+├── dto
+│   │
+│   ├── RegisterRequest
+│   ├── RegisterResponse
+│   ├── LoginRequest
+│   ├── LoginResponse
+│   ├── ChangePasswordRequest
+│   ├── ResetPasswordRequest
+│   ├── RefreshTokenRequest
+│   └── RefreshTokenResponse
+│
+│       └── Transportan datos
+│           entre Cliente ↔ API
+│
+├── entity
+│   │
+│   ├── UserAuth
+│   │   └── Representa tabla users
+│   │
+│   └── Role
+│       └── Roles del sistema
+│           - ADMIN
+│           - CLIENTE
+│
+├── repository
+│   │
+│   └── UserAuthRepository
+│       └── Acceso a Base de Datos
+│           - save()
+│           - findByEmail()
+│           - findById()
+│
+├── service
+│   │
+│   └── AuthService
+│       └── Lógica de negocio
+│           - Registro
+│           - Login
+│           - JWT
+│           - Refresh Token
+│           - Cambio contraseña
+│           - Recuperación contraseña
+│
+├── security
+│   │
+│   ├── JwtService
+│   │   └── Gestiona JWT
+│   │       - Generar token
+│   │       - Validar token
+│   │       - Extraer email
+│   │       - Extraer rol
+│   │
+│   └── JwtAuthenticationFilter
+│       └── Intercepta peticiones
+│           - Lee Authorization
+│           - Valida JWT
+│           - Autentica usuario
+│
+├── exception
+│   │
+│   ├── EmailAlreadyExistsException
+│   ├── InvalidCredentialsException
+│   ├── IncorrectPasswordException
+│   ├── UserNotFoundException
+│   │
+│   ├── ErrorResponse
+│   │   └── Modelo estándar de error
+│   │
+│   └── GlobalExceptionHandler
+│       └── Manejo global de excepciones
+│
+└── AuthServiceQuickBiteApplication
+    │
+    └── Punto de entrada del proyecto
+        (@SpringBootApplication)
+Flujo de una petición Login
+Cliente
+   │
+   ▼
+AuthController
+   │
+   ▼
+AuthService
+   │
+   ├── UserAuthRepository
+   │       │
+   │       ▼
+   │     MySQL
+   │
+   └── JwtService
+           │
+           ▼
+        JWT
+Flujo de una petición protegida
+Cliente
+   │
+   ▼
+Authorization: Bearer xxx
+   │
+   ▼
+JwtAuthenticationFilter
+   │
+   ├── JwtService valida token
+   ├── Extrae email
+   ├── Extrae rol
+   └── Autentica usuario
+   │
+   ▼
+AuthController
+   │
+   ▼
+AuthService
+Funcionalidades actuales
+✅ Registro
+✅ Login
+✅ BCrypt
+✅ JWT
+✅ Refresh Token
+✅ Roles
+✅ Validación JWT
+✅ Rutas protegidas
+✅ Swagger Security
+✅ Cambio de contraseña
+✅ Recuperación de contraseña
+✅ Actualización de último acceso
+✅ Manejo global de errores
+✅ Flyway
+✅ MySQL
