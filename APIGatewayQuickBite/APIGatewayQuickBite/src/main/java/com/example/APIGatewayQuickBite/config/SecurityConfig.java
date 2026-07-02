@@ -11,7 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {//prueba git
+public class SecurityConfig {
 
     private final JwtGatewayFilter jwtGatewayFilter;
 
