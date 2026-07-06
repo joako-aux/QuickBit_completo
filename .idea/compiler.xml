@@ -2,6 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile name="Annotation profile for NotificationServiceQuickBite" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="NotificationServiceQuickBite" />
+      </profile>
       <profile name="Annotation profile for pagos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,13 +21,14 @@
         </processorPath>
         <module name="AuthServiceQuickBite" />
         <module name="OrderServiceQuickBite" />
-        <module name="menu" />
         <module name="UserServiceQuickBite" />
         <module name="pagos" />
-        <module name="NotificationServiceQuickBite" />
         <module name="APIGatewayQuickBite" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="menu" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
