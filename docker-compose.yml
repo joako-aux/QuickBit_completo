@@ -22,7 +22,7 @@ services:
       - notification-service
 
   # ===================================================================
-  # 2. AUTH SERVICE (server.port=8081)
+  # 2. AUTH SERVICE
   # ===================================================================
   auth-service:
     build: ./AuthServiceQuickBite/AuthServiceQuickBite
@@ -38,7 +38,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # 3. USER SERVICE (server.port=8082)
+  # 3. USER SERVICE
   # ===================================================================
   user-service:
     build: ./UserServiceQuickBite
@@ -54,7 +54,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # 4. MENU SERVICE (server.port=8083)
+  # 4. MENU SERVICE
   # ===================================================================
   menu-service:
     build: ./MenuServiceQuickBite
@@ -71,7 +71,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # 5. ORDER SERVICE (server.port=8084)
+  # 5. ORDER SERVICE
   # ===================================================================
   order-service:
     build: ./OrderServiceQuickBite
@@ -87,7 +87,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # 6. PAGOS SERVICE (server.port=8085)
+  # 6. PAGOS SERVICE
   # ===================================================================
   pagos-service:
     build: ./pagos-service-quickbite
@@ -103,7 +103,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # 7. NOTIFICATION SERVICE (server.port=8086)
+  # 7. NOTIFICATION SERVICE
   # ===================================================================
   notification-service:
     build: ./NotificationServiceQuickBite/NotificationServiceQuickBite
@@ -119,7 +119,7 @@ services:
         condition: service_healthy
 
   # ===================================================================
-  # INFRAESTRUCTURA DE BASES DE DATOS (CON CHEQUEO DE SALUD)
+  # MYSQL AUTH
   # ===================================================================
   mysql-auth:
     image: mysql:8.0
@@ -136,6 +136,9 @@ services:
       timeout: 5s
       retries: 10
 
+  # ===================================================================
+  # MYSQL MENU
+  # ===================================================================
   mysql-menu:
     image: mysql:8.0
     ports:
@@ -151,6 +154,9 @@ services:
       timeout: 5s
       retries: 10
 
+  # ===================================================================
+  # MYSQL NOTIFICATION
+  # ===================================================================
   mysql-notif:
     image: mysql:8.0
     ports:
@@ -166,6 +172,9 @@ services:
       timeout: 5s
       retries: 10
 
+  # ===================================================================
+  # MYSQL USER
+  # ===================================================================
   mysql-user:
     image: mysql:8.0
     ports:
@@ -181,6 +190,9 @@ services:
       timeout: 5s
       retries: 10
 
+  # ===================================================================
+  # MYSQL ORDER
+  # ===================================================================
   mysql-order:
     image: mysql:8.0
     ports:
@@ -196,6 +208,9 @@ services:
       timeout: 5s
       retries: 10
 
+  # ===================================================================
+  # MYSQL PAGOS
+  # ===================================================================
   mysql-pagos:
     image: mysql:8.0
     ports:

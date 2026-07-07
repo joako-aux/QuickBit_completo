@@ -1,31 +1,26 @@
-# --- ETAPA 1: Compilación ---
+# --- ETAPA 1: Compilación interna en Docker ---
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# 1. Copiamos el pom.xml para preparar la descarga de dependencias
+# Copiamos el archivo de configuración de dependencias y el código fuente
 COPY pom.xml .
-
-# Descargamos las dependencias necesarias (incluyendo el parent SNAPSHOT)
-RUN mvn dependency:go-offline -B
-
-# 2. Copiamos el código fuente del servicio
 COPY src ./src
 
-# 3. Compilamos generando el archivo .jar (omitiendo los tests)
+# Compilamos el proyecto generando el archivo binario .jar (omitiendo los tests)
 RUN mvn clean package -DskipTests
 
-# --- ETAPA 2: Ejecución ---
+# --- ETAPA 2: Imagen final ligera para ejecución ---
 FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
-# Copiamos el .jar compilado en la etapa anterior
-COPY --from=build /app/target/AuthServiceQuickBite-0.0.1-SNAPSHOT.jar app.jar
+# Copiamos el .jar generado dinámicamente en la etapa de compilación
+COPY --from=build /app/target/*.jar app.jar
 
-# Exponemos el puerto interno por defecto de Spring Boot
+# Exponemos el puerto (informativo, Spring Boot usará el de su properties)
 EXPOSE 8080
 
-# Variables de entorno recomendadas para optimizar Java en contenedores
+# Variables de entorno para optimizar el uso de memoria de Java en Docker
 ENV JAVA_OPTS="-XX:+UseG1GC -XX:+ExitOnOutOfMemoryError"
 
-# Comando para ejecutar la aplicación
+# Comando definitivo para arrancar el microservicio
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

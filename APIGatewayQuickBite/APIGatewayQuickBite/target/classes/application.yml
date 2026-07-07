@@ -18,37 +18,25 @@ spring:
                 - Path=/api/auth/**
 
             # USER SERVICE
-            - id: user-service-en
+            - id: user-service
               uri: ${USER_SERVICE_URL:http://localhost:8082}
               predicates:
                 - Path=/api/users/**
-            - id: user-service-es
-              uri: ${USER_SERVICE_URL:http://localhost:8082}
-              predicates:
-                - Path=/api/usuarios/**
 
             # MENU SERVICE
-            - id: menu-service-main
+            - id: menu-service
               uri: ${MENU_SERVICE_URL:http://localhost:8083}
               predicates:
-                - Path=/api/menu/**
-            - id: menu-service-categories
-              uri: ${MENU_SERVICE_URL:http://localhost:8083}
-              predicates:
-                - Path=/api/categorias/**
-            - id: menu-service-products
-              uri: ${MENU_SERVICE_URL:http://localhost:8083}
-              predicates:
-                - Path=/api/productos/**
+                - Path=/api/menus/**
 
             # ORDER SERVICE
-            - id: order-service-quickbite
+            - id: order-service
               uri: ${ORDER_SERVICE_URL:http://localhost:8084}
               predicates:
                 - Path=/api/ordenes/**
 
-            # PAYMENTS SERVICE
-            - id: pagos-service
+            # PAYMENT SERVICE
+            - id: payment-service
               uri: ${PAGOS_SERVICE_URL:http://localhost:8085}
               predicates:
                 - Path=/api/pagos/**
@@ -59,36 +47,57 @@ spring:
               predicates:
                 - Path=/api/notificaciones/**
 
-            # SWAGGER DOCS (Mapeados dinámicamente también)
+            # SWAGGER AUTH
             - id: auth-docs
               uri: ${AUTH_SERVICE_URL:http://localhost:8081}
               predicates:
                 - Path=/auth-docs
+              filters:
+                - SetPath=/api-docs
 
+            # SWAGGER USER
             - id: user-docs
               uri: ${USER_SERVICE_URL:http://localhost:8082}
               predicates:
                 - Path=/user-docs
+              filters:
+                - SetPath=/api-docs
 
+            # SWAGGER MENU
             - id: menu-docs
               uri: ${MENU_SERVICE_URL:http://localhost:8083}
               predicates:
                 - Path=/menu-docs
+              filters:
+                - SetPath=/api-docs
 
+            # SWAGGER ORDER
             - id: order-docs
               uri: ${ORDER_SERVICE_URL:http://localhost:8084}
               predicates:
                 - Path=/order-docs
+              filters:
+                - SetPath=/api-docs
 
+            # SWAGGER PAYMENT
             - id: payment-docs
               uri: ${PAGOS_SERVICE_URL:http://localhost:8085}
               predicates:
                 - Path=/payment-docs
+              filters:
+                - SetPath=/api-docs
 
+            # SWAGGER NOTIFICATION
             - id: notification-docs
               uri: ${NOTIFICATION_SERVICE_URL:http://localhost:8086}
               predicates:
                 - Path=/notification-docs
+              filters:
+                - SetPath=/api-docs
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
 
 management:
   endpoints:
