@@ -18,7 +18,8 @@ import java.util.UUID;
 public class UserAuth {
 
     @Id
-    @JdbcTypeCode(Types.VARCHAR) // <--- ESTO SOLUCIONA EL ERROR 1366
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(columnDefinition = "VARCHAR(36)")
     private UUID id;
 
     @Column(nullable = false, unique = true)
