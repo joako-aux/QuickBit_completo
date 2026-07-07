@@ -12,13 +12,14 @@
         </processorPath>
         <module name="NotificationServiceQuickBite" />
       </profile>
-      <profile name="Annotation profile for pagos" enabled="true">
+      <profile name="Annotation profile for MenuServiceQuickBite" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="MenuServiceQuickBite" />
         <module name="AuthServiceQuickBite" />
         <module name="OrderServiceQuickBite" />
         <module name="UserServiceQuickBite" />
@@ -34,6 +35,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="APIGatewayQuickBite" options="-parameters" />
       <module name="AuthServiceQuickBite" options="-parameters" />
+      <module name="MenuServiceQuickBite" options="-parameters" />
       <module name="NotificationServiceQuickBite" options="-parameters" />
       <module name="OrderServiceQuickBite" options="-parameters" />
       <module name="UserServiceQuickBite" options="-parameters" />

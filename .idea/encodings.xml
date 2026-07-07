@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/APIGatewayQuickBite/APIGatewayQuickBite/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AuthServiceQuickBite/AuthServiceQuickBite/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MenuServiceQuickBite/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NotificationServiceQuickBite/NotificationServiceQuickBite/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OrderServiceQuickBite/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserServiceQuickBite/src/main/java" charset="UTF-8" />
