@@ -15,9 +15,9 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("User Service QuickBite")
+                                .title("Pagos Service QuickBite")
                                 .version("1.0")
-                                .description("Microservicio de usuarios")
+                                .description("Microservicio de Pagos")
                 );
     }
 }

@@ -11,6 +11,9 @@ spring:
         webmvc:
           routes:
 
+            # ===================================================================
+            # RUTAS DE LOGICA DE NEGOCIO
+            # ===================================================================
             # AUTH SERVICE
             - id: auth-service
               uri: ${AUTH_SERVICE_URL:http://localhost:8081}
@@ -47,11 +50,14 @@ spring:
               predicates:
                 - Path=/api/notificaciones/**
 
+            # ===================================================================
+            # RUTAS DE DOCUMENTACIÓN SWAGGER (CORREGIDAS CON /**)
+            # ===================================================================
             # SWAGGER AUTH
             - id: auth-docs
               uri: ${AUTH_SERVICE_URL:http://localhost:8081}
               predicates:
-                - Path=/auth-docs
+                - Path=/auth-docs/**
               filters:
                 - SetPath=/api-docs
 
@@ -59,7 +65,7 @@ spring:
             - id: user-docs
               uri: ${USER_SERVICE_URL:http://localhost:8082}
               predicates:
-                - Path=/user-docs
+                - Path=/user-docs/**
               filters:
                 - SetPath=/api-docs
 
@@ -67,7 +73,7 @@ spring:
             - id: menu-docs
               uri: ${MENU_SERVICE_URL:http://localhost:8083}
               predicates:
-                - Path=/menu-docs
+                - Path=/menu-docs/**
               filters:
                 - SetPath=/api-docs
 
@@ -75,7 +81,7 @@ spring:
             - id: order-docs
               uri: ${ORDER_SERVICE_URL:http://localhost:8084}
               predicates:
-                - Path=/order-docs
+                - Path=/order-docs/**
               filters:
                 - SetPath=/api-docs
 
@@ -83,7 +89,7 @@ spring:
             - id: payment-docs
               uri: ${PAGOS_SERVICE_URL:http://localhost:8085}
               predicates:
-                - Path=/payment-docs
+                - Path=/payment-docs/**
               filters:
                 - SetPath=/api-docs
 
@@ -91,7 +97,7 @@ spring:
             - id: notification-docs
               uri: ${NOTIFICATION_SERVICE_URL:http://localhost:8086}
               predicates:
-                - Path=/notification-docs
+                - Path=/notification-docs/**
               filters:
                 - SetPath=/api-docs
 

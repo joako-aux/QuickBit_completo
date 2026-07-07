@@ -16,9 +16,9 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("User Service QuickBite")
+                                .title("Ordenes Service QuickBite")
                                 .version("1.0")
-                                .description("Microservicio de usuarios")
+                                .description("Microservicio de Ordenes")
                 );
     }
 }

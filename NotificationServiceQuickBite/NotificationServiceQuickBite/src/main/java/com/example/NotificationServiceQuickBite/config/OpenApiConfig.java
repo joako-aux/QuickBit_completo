@@ -15,9 +15,9 @@ public class OpenApiConfig {//prueba git 2
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("User Service QuickBite")
+                                .title("Notificacion Service QuickBite")
                                 .version("1.0")
-                                .description("Microservicio de usuarios")
+                                .description("Microservicio de Notificacion")
                 );
     }
 }

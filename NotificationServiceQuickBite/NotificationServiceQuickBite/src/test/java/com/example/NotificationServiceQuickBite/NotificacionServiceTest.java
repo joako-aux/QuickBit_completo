@@ -1,4 +1,5 @@
 package com.example.NotificationServiceQuickBite;
+
 import com.example.NotificationServiceQuickBite.Modelo.Notificacion;
 import com.example.NotificationServiceQuickBite.dto.NotificacionDto;
 import com.example.NotificationServiceQuickBite.repository.NotificacionRepository;
@@ -35,7 +36,6 @@ class NotificacionServiceTest {
     @BeforeEach
     void setUp() {
         dtoPrueba = new NotificacionDto();
-
         dtoPrueba.setUsuarioId(UUID.randomUUID());
         dtoPrueba.setDestinatarioEmail("test@quickbite.com");
         dtoPrueba.setAsunto("Confirmación de Pedido");
@@ -44,10 +44,13 @@ class NotificacionServiceTest {
 
     @Test
     void cuandoElEnvioEsExitoso_debeGuardarNotificacionComoENVIADO() {
+        // Arrange
         ArgumentCaptor<Notificacion> notificacionCaptor = ArgumentCaptor.forClass(Notificacion.class);
 
+        // Act
         notificacionService.enviarEmail(dtoPrueba);
 
+        // Assert
         verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
         verify(repository, times(1)).save(notificacionCaptor.capture());
 
@@ -60,18 +63,24 @@ class NotificacionServiceTest {
 
     @Test
     void cuandoElEnvioFalla_debeGuardarNotificacionComoFALLIDO() {
+        // Arrange: Forzamos a que el mailSender lance una excepción al ser invocado
         doThrow(new RuntimeException("Error simulado de red"))
                 .when(mailSender).send(any(SimpleMailMessage.class));
 
         ArgumentCaptor<Notificacion> notificacionCaptor = ArgumentCaptor.forClass(Notificacion.class);
 
+        // Act
         notificacionService.enviarEmail(dtoPrueba);
 
+        // Assert
         verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
         verify(repository, times(1)).save(notificacionCaptor.capture());
 
         Notificacion notificacionGuardada = notificacionCaptor.getValue();
 
+        // Verificaciones del estado de contingencia
         assertEquals("FALLIDO", notificacionGuardada.getEstado());
+        assertEquals(dtoPrueba.getUsuarioId(), notificacionGuardada.getUsuarioId());
+        assertNotNull(notificacionGuardada.getFechaEnvio());
     }
 }
