@@ -1,26 +1,28 @@
 package com.QuickBite.UserServiceQuickBite.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.QuickBite.UserServiceQuickBite.model.Usuario;
+import com.QuickBite.UserServiceQuickBite.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.UUID;
-import com.QuickBite.UserServiceQuickBite.model.Usuario;
-import com.QuickBite.UserServiceQuickBite.service.UsuarioService;
-
-
 
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
+
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
 
     @PostMapping
-    public ResponseEntity<Usuario> crearPerfil(@RequestBody Usuario us) {
-        Usuario nuevoUsuario = usuarioService.crearUsuario(us);
+    public ResponseEntity<Usuario> crearPerfil(@Valid @RequestBody Usuario usuario) {
+        Usuario nuevoUsuario = usuarioService.crearUsuario(usuario);
         return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
     }
 
@@ -35,7 +37,10 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizarPerfil(@PathVariable UUID id, @RequestBody Usuario usuario) {
+    public ResponseEntity<Usuario> actualizarPerfil(
+            @PathVariable UUID id,
+            @Valid @RequestBody Usuario usuario) {
+
         Usuario usuarioEditado = usuarioService.actualizarUsuario(id, usuario);
         return ResponseEntity.ok(usuarioEditado);
     }

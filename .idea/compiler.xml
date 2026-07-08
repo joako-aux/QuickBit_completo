@@ -8,27 +8,26 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="MenuServiceQuickBite" />
+        <module name="AuthServiceQuickBite" />
         <module name="NotificationServiceQuickBite" />
+        <module name="APIGatewayQuickBite" />
       </profile>
-      <profile name="Annotation profile for pagos" enabled="true">
+      <profile name="Annotation profile for UserServiceQuickBite" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="MenuServiceQuickBite" />
-        <module name="AuthServiceQuickBite" />
-        <module name="OrderServiceQuickBite" />
         <module name="UserServiceQuickBite" />
-        <module name="pagos" />
-        <module name="APIGatewayQuickBite" />
+        <module name="OrderServiceQuickBite" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="menu" target="21" />
+      <module name="pagos" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

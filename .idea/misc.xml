@@ -8,14 +8,13 @@
         <option value="$PROJECT_DIR$/APIGatewayQuickBite/APIGatewayQuickBite/pom.xml" />
         <option value="$PROJECT_DIR$/AuthServiceQuickBite/AuthServiceQuickBite/pom.xml" />
         <option value="$PROJECT_DIR$/menu-service-quickbite/pom.xml" />
-        <option value="$PROJECT_DIR$/OrderServiceQuickBite/pom.xml" />
-        <option value="$PROJECT_DIR$/pagos-service-quickbite/pom.xml" />
-        <option value="$PROJECT_DIR$/UserServiceQuickBite/pom.xml" />
         <option value="$PROJECT_DIR$/MenuServiceQuickBite/pom.xml" />
+        <option value="$PROJECT_DIR$/UserServiceQuickBite/pom.xml" />
+        <option value="$PROJECT_DIR$/OrderServiceQuickBite/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-26" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="temurin-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
