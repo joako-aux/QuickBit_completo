@@ -16,6 +16,7 @@ public class Pago {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(columnDefinition = "VARCHAR(36)")
     private UUID id;
 
     @Column(name = "pedido_id", nullable = false)
