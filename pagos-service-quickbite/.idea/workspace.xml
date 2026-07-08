@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e135e36e-dd1b-4ad8-a1db-ad07e3fc5d3f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/OrderServiceQuickBiteApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/config/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/controller/OrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/dto/OrderDTO$OrderDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/dto/OrderDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/model/OrderModel$EstadoPedido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/model/OrderModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/repository/OrderRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/security/GatewayHeaderFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OrderServiceQuickBite/target/classes/com/QuickBite/OrderServiceQuickBite/service/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/UserServiceQuickBiteApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/config/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/dto/UsuarioDTO$UsuarioDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/dto/UsuarioDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/security/GatewayHeaderFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserServiceQuickBite/target/classes/com/QuickBite/UserServiceQuickBite/service/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pagos/PagosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pagos/PagosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/PagosApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/config/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/controller/PagoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/dto/PagoDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/entity/Pago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/repository/PagoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/security/GatewayHeaderFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/proyecto/pagos/service/PagoService.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "joako-aux"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/joako-aux/QuickBit_completo.git",
+    "accountId": "3c1805c7-8af0-4ddc-a38c-ddef754586c0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="3GCfumUtuzW1CW4ld0La8Atqhmk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Proyectos/pagos-service-quickbite"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e135e36e-dd1b-4ad8-a1db-ad07e3fc5d3f" name="Changes" comment="" />
+      <created>1783480696841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783480696841</updated>
+    </task>
+    <servers />
+  </component>
+</project>
