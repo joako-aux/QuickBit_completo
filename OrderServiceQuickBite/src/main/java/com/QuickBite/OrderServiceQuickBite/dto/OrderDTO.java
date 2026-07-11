@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
-@Builder // <--- ESTA ES LA QUE TE FALTABA
-@NoArgsConstructor  // Buena práctica para la deserialización de JSON (Jackson)
-@AllArgsConstructor // Requerida por @Builder cuando se combina con @NoArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderDTO {
 
     private UUID id;
